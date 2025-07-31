@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<form method="get">
+  <input name="q" placeholder="Search videos" value="{{ q }}">
+</form>
+
+<div class="video-grid">
+  {% for vid in videos %}
+  <a href="{{ url_for('video_detail', video_id=vid.id) }}">
+    <div class="video-card">
+      <img src="{{ url_for('static', filename='thumbnails/' ~ vid.thumbnail) }}" alt="{{ vid.name }}" style="width: 100%; height: 120px; object-fit: cover; border-radius: 4px;">
+      <h2>{{ vid.name }}</h2>
+      <p>{{ vid.description }}</p>
+      <p>{{ vid.category }}</p>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+<div class="pagination">
+  {% if page > 1 %}
+    <a href="{{ url_for('index', page=page-1, q=q, category=category) }}">Previous</a>
+  {% endif %}
+
+  {% for p in range(1, total_pages + 1) %}
+    <a href="{{ url_for('index', page=p, q=q, category=category) }}"
+       class="{% if p == page %}active{% endif %}">{{ p }}</a>
+  {% endfor %}
+
+  {% if page < total_pages %}
+    <a href="{{ url_for('index', page=page+1, q=q, category=category) }}">Next</a>
+  {% endif %}
+</div>
+
+{% endblock %}

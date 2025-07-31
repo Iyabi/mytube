@@ -1,0 +1,117 @@
+body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(41, 40, 40);
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(41, 40, 40);
+  color: white;
+  position: fixed;
+  z-index: 1000;
+}
+
+form{
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+}
+
+input{
+  background-color: rgb(41, 40, 40);
+  padding: 15px;
+  border-radius: 7px;
+  width: 300px;
+  box-shadow: 0px 0px 7px 0px black;
+  color: skyblue;
+}
+
+nav{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
+  padding: 15px;
+  border-radius: 4px;
+}
+nav a:active{
+  border-bottom: solid 2px white;
+}
+nav a:hover{
+  background-color: rgb(81, 81, 81);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 4rem;
+  padding: 4%;
+}
+.video-card {
+  background-color: rgb(41, 40, 40);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 9px 9px 0 black;
+  padding: 1rem;
+  border-radius: 9px;
+  color: white;
+  transition: transform ease 0.3s;
+}
+.video-card:hover{
+  transform: scale(1.1);
+}
+
+.video-grid a{
+  text-decoration: none;
+  color: skyblue;
+}
+
+.thumbnail{
+  width: 200px;
+}
+
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination a {
+  padding: 6px 12px;
+  text-decoration: none;
+  color: skyblue;
+  background: rgb(41, 40, 40);
+  box-shadow: 0px 0px 7px black;
+  border-radius: 4px;
+}
+
+.pagination a.active {
+  background: skyblue;
+  color: rgb(41, 40, 40);
+}
+h2{
+  color: skyblue;
+}
+p{
+  color: skyblue;
+}
+h3{
+  color: skyblue;
+}

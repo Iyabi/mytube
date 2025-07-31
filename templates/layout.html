@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Video Site{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+      <h3>My Video Site</h3>
+      <nav class="category-nav">
+        <a href="/">All Videos</a>
+        <a href="/category/Music">Music</a>
+        <a href="/category/Education">Education</a>
+        <a href="/category/Comedy">Comedy</a>
+        <a href="/category/Sports">Sports</a>
+        <a href="/category/Tech">Tech</a>
+      </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
